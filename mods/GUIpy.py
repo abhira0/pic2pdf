@@ -10,8 +10,10 @@ from .C4Upy import C4U
 
 class GUI(BackEnd):
     def __init__(self):
+        # An empty state with all the initial values
         self.state = State()
-        self.setState(self.state)
+        # Bind the state to GUI instance
+        self.bindState(self.state)
         self.display()
 
     def display(self):

@@ -17,7 +17,12 @@ Online References
 
 
 class BackEnd:
-    def setState(self, given_state: State) -> None:
+    def bindState(self, given_state: State) -> None:
+        """Bind the particular state to the Backend instance
+
+        Args:
+            given_state (State): A state required to bind to the GUI instance
+        """
         self.state = given_state
 
     def tryExcept(self, fun):
