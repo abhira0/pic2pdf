@@ -14,13 +14,16 @@ class GUI(BackEnd):
         self.state = State()
         # Bind the state to GUI instance
         self.bindState(self.state)
+        # Single function call to display the frontend
         self.display()
 
     def display(self):
+        """Calls all functions to finaly get the GUI menu"""
         self.window_init()
         self.layer1Frame()
 
     def window_init(self):
+        """TK Window is been instantiated with all initial configuration"""
         self.window = tk.Tk()
         self.window.title("ArgZ Pic2Pdf v{}".format(self.state.versionList[-1][0]))
         self.window.geometry(
