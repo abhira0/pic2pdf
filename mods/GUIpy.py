@@ -3,9 +3,9 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from tkinter.ttk import *
 
-from .Statepy import State
 from .Backendpy import BackEnd
 from .C4Upy import C4U
+from .Statepy import State
 
 
 class GUI(BackEnd):
