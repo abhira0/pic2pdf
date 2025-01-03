@@ -36,23 +36,26 @@ class BackEnd:
             filedialog.askopenfilenames(
                 initialdir=os.getcwd(),
                 title="Select image(s)",
-                filetypes=[("Images", [".png", ".jpg", ".jpeg"])],
+                filetypes=[("Images", [".png", ".jpg", ".jpeg", ".jfif"])],
             )
         )
         if len(PATHs) != 0:
             self.state.PATHS = sorted(list(set(self.state.PATHS + PATHs)))
+            print(f"\t[i] {len(PATHs)} Images selected")
 
     def enablePart(self):
         if self.enable_part_button["text"] == "Enable":
             self.enable_part_button["text"] = "Disable"
             entry = self.select_images.children["part_print"].children["part_reg_entry"]
             entry["state"] = "enable"
+            print(f"\t[i] Selective Paste Enabled")
         else:
             self.enable_part_button["text"] = "Enable"
             entry = self.select_images.children["part_print"].children["part_reg_entry"]
             entry.delete(0, "end")
             entry["state"] = "disable"
             self.state.selective_paste_flag = False
+            print(f"\t[i] Selective Paste Disabled")
 
     def getBorderSize(self):
         try:
@@ -63,7 +66,7 @@ class BackEnd:
         return pic_border
 
     def putBorder(self, pic):
-        print(f"\t[i] Putting borders for the pictures")
+        # print(f"\t[i] Putting borders for the pictures")
         w, h = pic.size  # width, height
         pic_border = self.getBorderSize()
 

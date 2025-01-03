@@ -105,7 +105,7 @@ class GUI(BackEnd):
             "ena_part", part_print, "Enable", self.enablePart
         )
         self.gridConfig(self.enable_part_button, 4, 0, "x2", "y2")
-
+                                            
     def seeSelImgW(self):
         screen = tk.Tk()  # Screen / Window
         screen.geometry("900x300")  # screen size
